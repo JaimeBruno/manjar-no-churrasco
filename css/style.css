@@ -198,14 +198,9 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--r
 .btn--outline { border: 1px solid rgba(240,153,123,.4); color: var(--salmon); background: transparent; }
 .btn--full { width: 100%; justify-content: center; margin-top: 8px; }
 
-/* ===== SECTION DIVIDERS ===== */
-.sec-divide {
-  height: 80px;
-  background: linear-gradient(to bottom, #0d0a08, #f7f4f0);
-}
-.sec-divide--light {
-  background: linear-gradient(to bottom, #f7f4f0, #0d0a08);
-}
+/* ===== SECTION BORDERS ===== */
+.section--dark + .section { border-top: 1px solid #e8e3dc; }
+.section + .section--dark { border-top: 1px solid rgba(255,255,255,.07); }
 
 /* ===== SECTIONS ===== */
 .section { padding: 80px 0; }
