@@ -368,8 +368,8 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--r
 
   /* HERO — full rebuild for mobile */
   .hero {
-    min-height: 90vh;
-    height: 90vh;
+    min-height: 95vh;
+    height: 95vh;
     overflow: hidden;
     display: flex;
     flex-direction: column;
