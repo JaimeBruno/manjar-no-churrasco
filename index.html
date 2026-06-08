@@ -12,6 +12,143 @@
 </head>
 <body>
 
+  <!-- MENU PAGE OVERLAY -->
+  <div class="menu-page" id="menuPage">
+    <button class="menu-page__close" id="menuClose" aria-label="Fechar menu">
+      <span></span><span></span>
+    </button>
+    <div class="menu-page__inner">
+      <span class="menu-page__label">CARDAPIO</span>
+      <h2 class="menu-page__title">NOSSOS CORTES</h2>
+      <p class="menu-page__desc">Selecao premium de carnes grelhadas na brasa com acompanhamentos tradicionais.</p>
+
+      <div class="menu-page__pills">
+        <span class="mpill mpill--active" data-cat="carnes">CARNES</span>
+        <span class="mpill" data-cat="entradas">ENTRADAS</span>
+        <span class="mpill" data-cat="acomp">ACOMPANHAMENTOS</span>
+        <span class="mpill" data-cat="sobremesas">SOBREMESAS</span>
+        <span class="mpill" data-cat="bebidas">BEBIDAS</span>
+      </div>
+
+      <div class="menu-page__grid">
+
+        <!-- CARNES -->
+        <div class="mcard" data-cat="carnes">
+          <div class="mcard__num">01</div>
+          <div class="mcard__info">
+            <h3>PICANHA PREMIUM</h3>
+            <p>Corte nobre, grelhada no ponto</p>
+          </div>
+          <span class="mcard__price">32 EUR</span>
+        </div>
+        <div class="mcard" data-cat="carnes">
+          <div class="mcard__num">02</div>
+          <div class="mcard__info">
+            <h3>COSTELA DE BOI</h3>
+            <p>12h de cozimento lento</p>
+          </div>
+          <span class="mcard__price">28 EUR</span>
+        </div>
+        <div class="mcard" data-cat="carnes">
+          <div class="mcard__num">03</div>
+          <div class="mcard__info">
+            <h3>FRALDINHA NA BRASA</h3>
+            <p>Com chimichurri artesanal</p>
+          </div>
+          <span class="mcard__price">26 EUR</span>
+        </div>
+        <div class="mcard" data-cat="carnes">
+          <div class="mcard__num">04</div>
+          <div class="mcard__info">
+            <h3>SECRETOS PORCO IBERICO</h3>
+            <p>Sugestao especial do chef</p>
+          </div>
+          <span class="mcard__price">34 EUR</span>
+        </div>
+        <div class="mcard" data-cat="carnes">
+          <div class="mcard__num">05</div>
+          <div class="mcard__info">
+            <h3>FRANGO NO CHURRASCO</h3>
+            <p>Marinado 24h em especiarias</p>
+          </div>
+          <span class="mcard__price">22 EUR</span>
+        </div>
+        <div class="mcard" data-cat="carnes">
+          <div class="mcard__num">06</div>
+          <div class="mcard__info">
+            <h3>TOMAHAWK PREMIUM</h3>
+            <p>1kg de maturacao especial</p>
+          </div>
+          <span class="mcard__price">58 EUR</span>
+        </div>
+
+        <!-- ENTRADAS -->
+        <div class="mcard" data-cat="entradas" style="display:none">
+          <div class="mcard__num">01</div>
+          <div class="mcard__info"><h3>PORCAO DE LINGUICA</h3><p>Grelhada com pimentoes</p></div>
+          <span class="mcard__price">14 EUR</span>
+        </div>
+        <div class="mcard" data-cat="entradas" style="display:none">
+          <div class="mcard__num">02</div>
+          <div class="mcard__info"><h3>ALHEIRA FRITA COM OVO</h3><p>Tradicao portuguesa na brasa</p></div>
+          <span class="mcard__price">18 EUR</span>
+        </div>
+        <div class="mcard" data-cat="entradas" style="display:none">
+          <div class="mcard__num">03</div>
+          <div class="mcard__info"><h3>QUEIJO COALHO NA BRASA</h3><p>Com mel e oregaos</p></div>
+          <span class="mcard__price">12 EUR</span>
+        </div>
+
+        <!-- ACOMPANHAMENTOS -->
+        <div class="mcard" data-cat="acomp" style="display:none">
+          <div class="mcard__num">01</div>
+          <div class="mcard__info"><h3>FAROFA DA CASA</h3><p>Receita tradicional brasileira</p></div>
+          <span class="mcard__price">6 EUR</span>
+        </div>
+        <div class="mcard" data-cat="acomp" style="display:none">
+          <div class="mcard__num">02</div>
+          <div class="mcard__info"><h3>ARROZ COM FEIJAO</h3><p>Feijao preto temperado</p></div>
+          <span class="mcard__price">7 EUR</span>
+        </div>
+        <div class="mcard" data-cat="acomp" style="display:none">
+          <div class="mcard__num">03</div>
+          <div class="mcard__info"><h3>VINAGRETE ARTESANAL</h3><p>Tomate, cebola e coentros frescos</p></div>
+          <span class="mcard__price">5 EUR</span>
+        </div>
+
+        <!-- SOBREMESAS -->
+        <div class="mcard" data-cat="sobremesas" style="display:none">
+          <div class="mcard__num">01</div>
+          <div class="mcard__info"><h3>PUDIM DE LEITE</h3><p>Receita da casa</p></div>
+          <span class="mcard__price">8 EUR</span>
+        </div>
+        <div class="mcard" data-cat="sobremesas" style="display:none">
+          <div class="mcard__num">02</div>
+          <div class="mcard__info"><h3>BRIGADEIRO GOURMET</h3><p>Chocolate belga</p></div>
+          <span class="mcard__price">6 EUR</span>
+        </div>
+
+        <!-- BEBIDAS -->
+        <div class="mcard" data-cat="bebidas" style="display:none">
+          <div class="mcard__num">01</div>
+          <div class="mcard__info"><h3>CAIPIRINHA DA CASA</h3><p>Cachaca artesanal, limao, acucar</p></div>
+          <span class="mcard__price">10 EUR</span>
+        </div>
+        <div class="mcard" data-cat="bebidas" style="display:none">
+          <div class="mcard__num">02</div>
+          <div class="mcard__info"><h3>VINHO TINTO DA CASA</h3><p>Selecao do sommelier</p></div>
+          <span class="mcard__price">9 EUR</span>
+        </div>
+        <div class="mcard" data-cat="bebidas" style="display:none">
+          <div class="mcard__num">03</div>
+          <div class="mcard__info"><h3>AGUA / REFRIGERANTE</h3><p>Com ou sem gas</p></div>
+          <span class="mcard__price">3 EUR</span>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!-- NAVBAR -->
   <nav class="nav" id="nav">
     <div class="nav__logo">
@@ -20,8 +157,7 @@
     </div>
     <div class="nav__links" id="navLinks">
       <a href="#inicio">INICIO</a>
-      <a href="#historia">HISTORIA</a>
-      <a href="#cardapio">CARDAPIO</a>
+      <a href="#cardapio" class="nav__menu-trigger" id="navMenuTrigger">CARDAPIO</a>
       <a href="#galeria">GALERIA</a>
       <a href="#horario">HORARIO</a>
       <a href="#contacto">CONTACTO</a>
@@ -45,100 +181,48 @@
     </div>
     <div class="hero__subtitle">RESTAURANT GRILL</div>
     <div class="hero__cta-left">
-      <a href="#reservas" class="btn btn--primary">📅 RESERVAR MESA</a>
+      <a href="#reservas" class="btn btn--primary">RESERVAR MESA</a>
     </div>
     <div class="hero__cta-right">
-      <a href="#cardapio" class="btn btn--outline">📖 VER CARDAPIO</a>
+      <button class="btn btn--outline" id="heroMenuBtn">VER CARDAPIO</button>
     </div>
   </section>
 
-  <!-- HISTORIA -->
-  <section class="section" id="historia">
-    <span class="section__label anim">NOSSA HISTORIA</span>
-    <h2 class="section__title anim">NASCIDOS NO FOGO</h2>
-    <p class="section__desc anim">Da paixao pela carne ao sonho de trazer o verdadeiro churrasco brasileiro ao coracao da Europa.</p>
-    <div class="historia">
-      <div class="historia__img anim-left">
-        <div class="placeholder"><span>📷 Foto do restaurante</span></div>
-      </div>
-      <div class="historia__content anim-right">
-        <div class="historia__stats">
-          <div class="stat"><span class="stat__num">2018</span><span class="stat__label">Fundacao</span></div>
-          <div class="stat"><span class="stat__num">5.0</span><span class="stat__label">Avaliacao</span></div>
-          <div class="stat"><span class="stat__num">+50</span><span class="stat__label">Pratos</span></div>
-        </div>
-        <p class="historia__text">Fundado em 2018 por uma familia brasileira apaixonada pela arte do churrasco, o Manjar no Churrasco nasceu do desejo de partilhar os sabores autenticos da brasa com Luxemburgo. Cada corte e selecionado com rigor, cada tempero carrega a memoria das origens.</p>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- CARDAPIO -->
-  <section class="section" id="cardapio">
-    <span class="section__label anim">CARDAPIO</span>
-    <h2 class="section__title anim">NOSSOS CORTES</h2>
-    <p class="section__desc anim">Selecao premium de carnes grelhadas na brasa com acompanhamentos tradicionais.</p>
-    <div class="pills anim">
-      <span class="pill pill--active">CARNES</span>
-      <span class="pill">ENTRADAS</span>
-      <span class="pill">ACOMPANHAMENTOS</span>
-      <span class="pill">SOBREMESAS</span>
-      <span class="pill">BEBIDAS</span>
-    </div>
-    <div class="menu-grid">
-      <div class="menu-card anim-left">
-        <div class="menu-card__thumb">🥩</div>
-        <div class="menu-card__info"><h3>PICANHA PREMIUM</h3><p>Corte nobre, grelhada no ponto</p><span class="price">32 EUR</span></div>
-      </div>
-      <div class="menu-card anim-right">
-        <div class="menu-card__thumb">🍖</div>
-        <div class="menu-card__info"><h3>COSTELA DE BOI</h3><p>12h de cozimento lento</p><span class="price">28 EUR</span></div>
-      </div>
-      <div class="menu-card anim-scale">
-        <div class="menu-card__thumb">🔥</div>
-        <div class="menu-card__info"><h3>FRALDINHA NA BRASA</h3><p>Com chimichurri artesanal</p><span class="price">26 EUR</span></div>
-      </div>
-      <div class="menu-card anim-scale">
-        <div class="menu-card__thumb">🍳</div>
-        <div class="menu-card__info"><h3>ALHEIRA FRITA COM OVO</h3><p>Tradicao portuguesa na brasa</p><span class="price">18 EUR</span></div>
-      </div>
-      <div class="menu-card anim-left">
-        <div class="menu-card__thumb">⭐</div>
-        <div class="menu-card__info"><h3>SECRETOS PORCO IBERICO</h3><p>Sugestao especial do chef</p><span class="price">34 EUR</span></div>
-      </div>
-      <div class="menu-card anim-right">
-        <div class="menu-card__thumb">🍗</div>
-        <div class="menu-card__info"><h3>FRANGO NO CHURRASCO</h3><p>Marinado 24h em especiarias</p><span class="price">22 EUR</span></div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
+  <!-- SECTION DIVIDER -->
+  <div class="sec-divide"></div>
 
   <!-- GALERIA -->
-  <section class="section" id="galeria">
-    <span class="section__label anim">GALERIA</span>
-    <h2 class="section__title anim">O NOSSO ESPACO</h2>
-    <p class="section__desc anim">Ambiente acolhedor com o calor da brasa e a alma do churrasco.</p>
-    <div class="gallery">
-      <div class="gallery__main anim-left"><div class="placeholder"><span>📷 Interior</span></div></div>
-      <div class="gallery__item anim-scale"><div class="placeholder"><span>Prato 1</span></div></div>
-      <div class="gallery__item anim-scale"><div class="placeholder"><span>Prato 2</span></div></div>
-      <div class="gallery__item anim-right"><div class="placeholder"><span>Parrilla</span></div></div>
-      <div class="gallery__item anim-right"><div class="placeholder"><span>Ambiente</span></div></div>
+  <section class="section section--dark" id="galeria">
+    <div class="section__header anim">
+      <span class="section__label">GALERIA</span>
+      <h2 class="section__title">O NOSSO ESPACO</h2>
+      <p class="section__desc">Ambiente acolhedor com o calor da brasa e a alma do churrasco.</p>
+    </div>
+    <div class="gallery-full">
+      <div class="gallery-full__main anim-scale">
+        <div class="placeholder placeholder--dark"><span>INTERIOR DO RESTAURANTE</span></div>
+      </div>
+      <div class="gallery-full__row">
+        <div class="gallery-full__item anim-left"><div class="placeholder placeholder--dark"><span>PRATO 01</span></div></div>
+        <div class="gallery-full__item anim-scale"><div class="placeholder placeholder--dark"><span>PRATO 02</span></div></div>
+        <div class="gallery-full__item anim-scale"><div class="placeholder placeholder--dark"><span>PARRILLA</span></div></div>
+        <div class="gallery-full__item anim-right"><div class="placeholder placeholder--dark"><span>AMBIENTE</span></div></div>
+      </div>
     </div>
   </section>
 
-  <div class="divider"></div>
+  <!-- SECTION DIVIDER -->
+  <div class="sec-divide sec-divide--light"></div>
 
   <!-- HORARIO -->
   <section class="section" id="horario">
-    <span class="section__label anim">HORARIO</span>
-    <h2 class="section__title anim">QUANDO NOS VISITAR</h2>
-    <p class="section__desc anim">Abertos de terca a domingo para almoco e jantar.</p>
+    <div class="section__header anim">
+      <span class="section__label">HORARIO</span>
+      <h2 class="section__title">QUANDO NOS VISITAR</h2>
+      <p class="section__desc">Abertos de terca a domingo para almoco e jantar.</p>
+    </div>
     <div class="hours anim">
-      <div class="hours__row"><span class="hours__day">Segunda-feira</span><span class="hours__closed">Fechado</span></div>
+      <div class="hours__row"><span class="hours__day">Segunda-feira</span><span class="hours__closed">FECHADO</span></div>
       <div class="hours__row"><span class="hours__day">Terca a Quinta</span><span class="hours__time">12h00 – 15h00 / 18h30 – 23h00</span></div>
       <div class="hours__row"><span class="hours__day">Sexta-feira</span><span class="hours__time">12h00 – 15h00 / 18h30 – 00h00</span></div>
       <div class="hours__row"><span class="hours__day">Sabado</span><span class="hours__time">12h00 – 16h00 / 18h30 – 00h00</span></div>
@@ -146,13 +230,16 @@
     </div>
   </section>
 
-  <div class="divider"></div>
+  <!-- SECTION DIVIDER -->
+  <div class="sec-divide"></div>
 
   <!-- RESERVAS -->
-  <section class="section" id="reservas">
-    <span class="section__label anim">RESERVAS</span>
-    <h2 class="section__title anim">RESERVE A SUA MESA</h2>
-    <p class="section__desc anim">Garanta o seu lugar e viva a experiencia do churrasco autentico.</p>
+  <section class="section section--dark" id="reservas">
+    <div class="section__header anim">
+      <span class="section__label">RESERVAS</span>
+      <h2 class="section__title">RESERVE A SUA MESA</h2>
+      <p class="section__desc">Garanta o seu lugar e viva a experiencia do churrasco autentico.</p>
+    </div>
     <div class="reserva anim">
       <div class="reserva__row">
         <div class="field"><label>Nome completo</label><input type="text" placeholder="Seu nome"></div>
@@ -171,30 +258,45 @@
         </div>
       </div>
       <div class="field field--full"><label>Observacoes</label><textarea placeholder="Alergias, ocasiao especial, pedidos..."></textarea></div>
-      <button type="button" class="btn btn--primary btn--full">📅 CONFIRMAR RESERVA</button>
+      <button type="button" class="btn btn--primary btn--full">CONFIRMAR RESERVA</button>
     </div>
   </section>
 
-  <div class="divider"></div>
+  <!-- SECTION DIVIDER -->
+  <div class="sec-divide sec-divide--light"></div>
 
   <!-- CONTACTO -->
   <section class="section" id="contacto">
-    <span class="section__label anim">CONTACTO</span>
-    <h2 class="section__title anim">ENCONTRE-NOS</h2>
-    <p class="section__desc anim">No coracao de Luxemburgo, a poucos passos da Place d'Armes.</p>
+    <div class="section__header anim">
+      <span class="section__label">CONTACTO</span>
+      <h2 class="section__title">ENCONTRE-NOS</h2>
+      <p class="section__desc">No coracao de Luxemburgo, a poucos passos da Place d'Armes.</p>
+    </div>
     <div class="contact">
       <div class="contact__map anim-left">
-        <div class="placeholder placeholder--map"><span>📍 Google Maps embed</span></div>
+        <div class="placeholder placeholder--map"><span>GOOGLE MAPS</span></div>
       </div>
       <div class="contact__info anim-right">
-        <div class="contact__item"><span class="contact__icon">📍</span><div><strong>ENDERECO</strong><p>12 Rue du Marche-aux-Herbes, 1728 Luxembourg</p></div></div>
-        <div class="contact__item"><span class="contact__icon">📞</span><div><strong>TELEFONE</strong><p>+352 26 XX XX XX</p></div></div>
-        <div class="contact__item"><span class="contact__icon">📧</span><div><strong>EMAIL</strong><p>info@manjarnochurrasco.lu</p></div></div>
-        <div class="contact__item"><span class="contact__icon">🕐</span><div><strong>HORARIO</strong><p>Ter – Dom: 12h–15h / 18h30–23h</p></div></div>
+        <div class="contact__item">
+          <div class="contact__icon-wrap">E</div>
+          <div><strong>ENDERECO</strong><p>12 Rue du Marche-aux-Herbes, 1728 Luxembourg</p></div>
+        </div>
+        <div class="contact__item">
+          <div class="contact__icon-wrap">T</div>
+          <div><strong>TELEFONE</strong><p>+352 26 XX XX XX</p></div>
+        </div>
+        <div class="contact__item">
+          <div class="contact__icon-wrap">M</div>
+          <div><strong>EMAIL</strong><p>info@manjarnochurrasco.lu</p></div>
+        </div>
+        <div class="contact__item">
+          <div class="contact__icon-wrap">H</div>
+          <div><strong>HORARIO</strong><p>Ter – Dom: 12h–15h / 18h30–23h</p></div>
+        </div>
         <div class="contact__social">
-          <a href="#" aria-label="Instagram">IG</a>
-          <a href="#" aria-label="Facebook">FB</a>
-          <a href="#" aria-label="WhatsApp">WA</a>
+          <a href="#" aria-label="Instagram">INSTAGRAM</a>
+          <a href="#" aria-label="Facebook">FACEBOOK</a>
+          <a href="#" aria-label="WhatsApp">WHATSAPP</a>
         </div>
       </div>
     </div>
@@ -202,7 +304,7 @@
 
   <!-- FOOTER -->
   <footer class="footer">
-    <div class="footer__left">🔥 <span>MANJAR NO CHURRASCO © 2026</span></div>
+    <div class="footer__left">🔥 <span>MANJAR NO CHURRASCO &copy; 2026</span></div>
     <div class="footer__right"><a href="#">Politica de privacidade</a></div>
   </footer>
 
