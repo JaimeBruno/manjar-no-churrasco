@@ -93,6 +93,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const reservaBtn = document.querySelector('.reserva .btn');
 if (reservaBtn) {
   reservaBtn.addEventListener('click', () => {
-    alert('Reserva enviada! (Demo - integrar con backend)');
+    alert('Réservation envoyée !');
   });
 }
