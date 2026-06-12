@@ -239,6 +239,18 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--r
 .gallery-full__item .placeholder { min-height: 100%; height: 100%; border-radius: 0; border-right: 1px solid rgba(255,255,255,.06); }
 .gallery-full__item:last-child .placeholder { border-right: none; }
 
+/* Imagens da galeria */
+.gallery-img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: brightness(.85) saturate(1.05);
+  transition: transform .8s cubic-bezier(.4,0,.2,1), filter .5s;
+}
+.gallery-full__main:hover .gallery-img,
+.gallery-full__item:hover .gallery-img {
+  transform: scale(1.05);
+  filter: brightness(1) saturate(1.1);
+}
+
 /* ===== HOURS ===== */
 .hours {
   max-width: 580px; margin: 0 auto;
