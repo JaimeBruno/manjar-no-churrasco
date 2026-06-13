@@ -90,9 +90,107 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // ===== RESERVATION FORM =====
-const reservaBtn = document.querySelector('.reserva .btn');
-if (reservaBtn) {
-  reservaBtn.addEventListener('click', () => {
-    alert('Réservation envoyée !');
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzEcIz-q8On9OpoUwnlxF5-9H981u973FVeQUMipG0qkZCxnmocHlZ3r_mMFnM4uDazug/exec';
+
+// Horarios por día de la semana (0=dom, 1=lun ... 6=sab)
+// Martes (2) = cerrado. Lunes (1) = solo mediodía.
+const CRENEAUX = {
+  midi: ['12:00', '12:30', '13:00', '13:30', '14:00'],
+  soir: ['19:00', '19:30', '20:00', '20:30', '21:00']
+};
+
+const dateInput   = document.getElementById('r-date');
+const heureSelect = document.getElementById('r-heure');
+const reservaForm = document.getElementById('reservaForm');
+const reservaMsg  = document.getElementById('reservaMsg');
+const reservaBtn  = document.getElementById('reservaBtn');
+
+// Fecha mínima = hoy
+if (dateInput) {
+  const today = new Date().toISOString().split('T')[0];
+  dateInput.min = today;
+}
+
+// Al elegir fecha, rellenar horarios según el día
+function updateCreneaux() {
+  const val = dateInput.value;
+  heureSelect.innerHTML = '';
+  if (!val) return;
+
+  const jour = new Date(val + 'T12:00:00').getDay();
+
+  // Martes cerrado
+  if (jour === 2) {
+    heureSelect.innerHTML = '<option value="">— Fermé le mardi —</option>';
+    return;
+  }
+
+  let options = [];
+  if (jour === 1) {
+    // Lunes: solo mediodía
+    options = CRENEAUX.midi;
+  } else {
+    options = [...CRENEAUX.midi, ...CRENEAUX.soir];
+  }
+
+  heureSelect.innerHTML = options.map(h => `<option value="${h}">${h}</option>`).join('');
+}
+
+if (dateInput) {
+  dateInput.addEventListener('change', updateCreneaux);
+}
+
+// Envío del formulario
+if (reservaForm) {
+  reservaForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const heure = heureSelect.value;
+    if (!heure) {
+      showMsg('Veuillez choisir un jour d\'ouverture.', 'error');
+      return;
+    }
+
+    const payload = {
+      nom:       document.getElementById('r-nom').value,
+      email:     document.getElementById('r-email').value,
+      telephone: document.getElementById('r-tel').value,
+      personnes: document.getElementById('r-personnes').value,
+      date:      dateInput.value,
+      heure:     heure
+    };
+
+    reservaBtn.disabled = true;
+    reservaBtn.textContent = 'ENVOI EN COURS...';
+
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      body: JSON.stringify(payload)
+    })
+    .then(r => r.json())
+    .then(res => {
+      if (res.success) {
+        showMsg('✅ Demande reçue ! Nous vous confirmerons par téléphone.', 'ok');
+        reservaForm.reset();
+        heureSelect.innerHTML = '';
+      } else if (res.reason === 'complet') {
+        showMsg('😔 Ce service est complet. Essayez un autre créneau ou jour.', 'error');
+      } else {
+        showMsg('Une erreur est survenue. Réessayez ou appelez-nous.', 'error');
+      }
+    })
+    .catch(() => {
+      showMsg('Une erreur est survenue. Réessayez ou appelez-nous.', 'error');
+    })
+    .finally(() => {
+      reservaBtn.disabled = false;
+      reservaBtn.textContent = 'CONFIRMER LA RÉSERVATION';
+    });
   });
+}
+
+function showMsg(text, type) {
+  reservaMsg.textContent = text;
+  reservaMsg.style.display = 'block';
+  reservaMsg.style.color = type === 'ok' ? '#7bc47b' : '#e88';
 }

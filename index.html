@@ -239,26 +239,35 @@
       <h2 class="section__title">RÉSERVEZ VOTRE TABLE</h2>
       <p class="section__desc">Garantissez votre place et vivez l'expérience du churrasco authentique.</p>
     </div>
-    <div class="reserva anim">
+    <form class="reserva anim" id="reservaForm">
       <div class="reserva__row">
-        <div class="field"><label>Nom complet</label><input type="text" placeholder="Votre nom"></div>
-        <div class="field"><label>Email</label><input type="email" placeholder="email@exemple.com"></div>
+        <div class="field"><label>Nom complet</label><input type="text" id="r-nom" placeholder="Votre nom" required></div>
+        <div class="field"><label>Email</label><input type="email" id="r-email" placeholder="email@exemple.com" required></div>
       </div>
       <div class="reserva__row">
-        <div class="field"><label>Téléphone</label><input type="tel" placeholder="+352 ..."></div>
+        <div class="field"><label>Téléphone</label><input type="tel" id="r-tel" placeholder="+352 ..." required></div>
         <div class="field"><label>Personnes</label>
-          <select><option>2 personnes</option><option>3 personnes</option><option>4 personnes</option><option>5 personnes</option><option>6+ personnes</option></select>
+          <select id="r-personnes" required>
+            <option value="1">1 personne</option>
+            <option value="2" selected>2 personnes</option>
+            <option value="3">3 personnes</option>
+            <option value="4">4 personnes</option>
+            <option value="5">5 personnes</option>
+            <option value="6">6 personnes</option>
+            <option value="7">7 personnes</option>
+            <option value="8">8 personnes</option>
+          </select>
         </div>
       </div>
       <div class="reserva__row">
-        <div class="field"><label>Date</label><input type="date"></div>
+        <div class="field"><label>Date</label><input type="date" id="r-date" required></div>
         <div class="field"><label>Heure</label>
-          <select><option>12:00</option><option>12:30</option><option>13:00</option><option>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option><option>21:00</option></select>
+          <select id="r-heure" required></select>
         </div>
       </div>
-      <div class="field field--full"><label>Remarques</label><textarea placeholder="Allergies, occasion spéciale, demandes..."></textarea></div>
-      <button type="button" class="btn btn--primary btn--full">CONFIRMER LA RÉSERVATION</button>
-    </div>
+      <button type="submit" class="btn btn--primary btn--full" id="reservaBtn">CONFIRMER LA RÉSERVATION</button>
+      <p id="reservaMsg" style="margin-top:16px;text-align:center;font-size:0.95rem;display:none;"></p>
+    </form>
   </section>
 
   <!-- CONTACTO -->
@@ -275,7 +284,7 @@
       <div class="contact__info anim-right">
         <div class="contact__item">
           <div class="contact__icon-wrap">A</div>
-          <div><strong>ADRESSE</strong><p>165 Avenue Charlotte, Differdange, Luxembourg</p></div>
+          <div><strong>ADRESSE</strong><p>165 Avenue Charlotte, 4531 Oberkorn – Differdange, Luxembourg</p></div>
         </div>
         <div class="contact__item">
           <div class="contact__icon-wrap">T</div>
